@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.12.2.min.js" ></script>
+		
+		<style type="text/css">
+			.c1{
+				width:150px;
+				height:150px;
+				border:1px solid red;
+				background-color: blue;
+			}
+		</style>
+	
+	</head>
+	<body>
+		
+		<table border="1">
+			<tr>
+				<td>name</td>
+				<td>age</td>
+			</tr>
+			
+		</table>
+		
+		
+		<button onclick="btnClick()">click</button>
+		<div class="c1">afafaf</div>
+		
+		
+		
+		<script type="text/javascript">
+			// 设置指定的属性
+			$("table").attr("width", "200");
+			// 删除指定的属性
+			$("table").removeAttr("border");
+			
+			// 删除指定的class属性值
+			$("div").removeClass("c1");
+			// 添加指定的class值
+			$("div").addClass("c1");
+			
+			function btnClick(){
+				// 如果存在删除；不存在添加
+				$("div").toggleClass("c1");
+			}
+			
+			// 设置宽高
+			$("table").height("300");
+			$("table").width("400");
+			// 设置元素的偏移量
+			$("table").offset({left:50,top:50})
+			
+			
+			$("div").hide();
+			$("div").show();
+			
+			// 淡入淡出
+			$("div").fadeOut(2000);
+			$("div").fadeIn(2000);
+			
+			
+		</script>
+		
+		
+		
+	</body>
+</html>
+
+
+
+
+

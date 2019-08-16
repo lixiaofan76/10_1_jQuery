@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2 align="center">检索知识库</h2>
+	
+	
+	<table border="1" width="600">
+		<tr>
+			<th>序号</th>
+			<th>标题</th>
+			<th>分类</th>
+			<th>最后编辑</th>
+		</tr>
+		<tbody id="tid"></tbody>
+	</table>
+	 <script type="text/javascript" src="js/jquery-1.12.2.min.js"></script>
+	 <script type="text/javascript">
+		 $(function(){
+			 findAll()
+		 })
+		 function findAll(){
+			 $.ajax({
+			 	dataType:'json',//服务器返回json格式数据
+			 	type:'post',//HTTP请求类型
+				url:"knowledge/findAll.do",
+			 	timeout:10000,//超时时间设置为10秒；
+			 	success:function(data){
+			 		if(data.code == 1){
+						$("#tid").empty();
+						var infos = data.info;
+						$(info).each(function(){
+							var html = 
+						})
+					}
+			 	},
+			 	error:function(xhr,type,errorThrown){
+			 		
+			 	}
+			 });
+		 }
+	 </script>
+</body>
+</html>

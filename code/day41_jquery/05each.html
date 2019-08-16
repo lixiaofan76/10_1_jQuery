@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript" src="js/jquery-1.12.2.min.js" ></script>
+		
+	</head>
+	<body>
+		
+		<table>
+			<tr>
+				<td>name</td>
+				<td>age</td>
+			</tr>
+			<tr>
+				<td>zangsan</td>
+				<td>12</td>
+			</tr>
+			
+		</table>
+		
+		<script type="text/javascript">
+			
+			var arr = [23, 12, 34];
+			var arr2 = [{name:"zhangsan",age:20},
+						{name:"wangwu",age:12},
+						{name:"lisi",age:30}]
+			
+//			for(var i = 0; i < arr.length; i++){
+//				
+//			}
+			// for-in
+//			for(var i in arr){
+//				//alert(i);
+//			}
+
+			// 遍历  回调函数
+			$(arr).each(function(){
+				// this表示遍历到的每个元素
+				//alert(this);
+			})
+			
+			$(arr2).each(function(){
+//				alert(this.name);
+//				alert(this.age);
+			})
+			
+			// index 表示遍历的元素的索引，item表示遍历到的元素
+			$(arr2).each(function(index, item){
+//				alert(index);
+//				alert(item.name);
+			});
+			
+			
+			var obj = {qq:"1234", phone:"12121212"};
+			//alert(obj);
+			//  $(obj) -> [{qq:"1234", phone:"12121212"}]
+			$(obj).each(function(){
+				//alert(this);
+			})
+			
+			// 可以遍历数组和对象
+			$.each(obj, function(k,v){
+				//alert(k);
+			})
+			
+			
+			$(arr2).each(function(){
+				//document.createElement()
+				var html = "<tr><td>" + this.name + "</td><td>" + this.age + "</td></tr>";
+				
+				// 根据html的字符串，创建dom对象
+				var trEle = $(html);
+				// 追加子元素
+				$("table").append(trEle);
+				//$("table").prepend(trEle);
+				
+				// 在指定元素的后面添加兄弟元素
+				//$("table").after(trEle);
+				//$("table").before(trEle);
+			
+			})
+			// 清空子元素
+			$("table").empty();
+			
+			
+		</script>
+		
+		
+		
+		
+		
+	</body>
+</html>

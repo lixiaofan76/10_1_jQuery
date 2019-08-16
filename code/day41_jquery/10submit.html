@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.12.2.min.js" ></script>
+	</head>
+	<body>
+		
+		<!-- onsubmit 提交事件
+			如果return false，阻止默认的提交操作
+			
+		-->
+		<form action="index.html">
+			name<input id="name" type="text" name="name" /><br />
+			age<input id="age" type="text" name="age" /><br />
+			<input type="submit" value="submit"/>
+		</form>
+		
+		<script type="text/javascript">
+			// jquery中设置提交事件
+			$("form").submit(function(){
+				var name = $("#name").val();
+				
+				if(name == null || name.length == 0){
+					return false;
+				}
+				
+			})
+			
+			
+			function formVerify(){
+				var nameEle = document.getElementById("name");
+				var name = nameEle.value;
+				if(name == null || name.length == 0){
+					return false;
+				}
+				
+				var ageEle = document.getElementById("age");
+				var age = ageEle.value;
+				var regx = /^[1-9]\d{0,2}$/;
+				// test() 验证
+				if(!regx.test(age)){
+					return false;
+				}
+				
+			}
+			
+		</script>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.12.2.min.js" ></script>
+		
+		<style type="text/css">
+			div{
+				width: 150px;
+				height: 150px;
+				background-color: red;
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		<div></div>
+		
+		<input type="text" name="v1" />
+		+
+		<input type="text" name="v2"/>
+		= <span></span>
+		<button>add</button>
+		
+		<script type="text/javascript">
+			// 选择器.事件函数(function(){})
+			// 单击事件
+//			$("div").click(function(){
+//				alert(1);
+//			})
+			
+			$("div").dblclick(function(){
+				// this表示触发事件的对象
+				$(this).css("background-color", "green");
+			})
+			
+			// 悬停
+			// 第一个函数：鼠标悬停的元素上时执行的操作
+			// 第二个函数：鼠标离开时执行的操作
+			$("div").hover(function(){
+				$(this).css("background-color", "blue");
+			}, function(){
+				$(this).css("background-color", "yellow");
+			})
+			
+			
+		</script>
+		
+		
+		<script type="text/javascript">
+			
+			$("button").click(function(){
+				var v1 = $("input[name='v1']").val();
+				var v2 = $("input[name='v2']").val();
+				
+				// NaN :not a number
+				// isNaN()  是否非数字
+				if(isNaN(v1) || isNaN(v2)){
+					alert("输入非数字");
+					return;
+				}
+				
+				var v = parseInt(v1) + parseInt(v2);
+				
+				// html() text()  val()... 带参数，相当于设置值
+				$("span").html(v)
+			})
+			
+			// 获取输入焦点的事件
+			$("input").focus(function(){
+				$(this).val("");
+			})
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

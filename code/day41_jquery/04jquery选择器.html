@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.12.2.min.js" ></script>
+	</head>
+	<body>
+		
+		<ul>
+			<li>程序计数器</li>
+			<li>方法区</li>
+			<div>
+				<li>常量区</li>
+			</div>
+			
+		</ul>
+		
+		
+		<table border="1" width="200">
+			<tr>
+				<td>name</td>
+				<td>age</td>
+			</tr>
+			<tr>
+				<td>Tom</td>
+				<td>12</td>
+			</tr>
+			<tr>
+				<td>Jerry</td>
+				<td>5</td>
+			</tr>
+			<tr>
+				<td>Jack</td>
+				<td>5</td>
+			</tr>
+			<tr>
+				<td>肉丝</td>
+				<td>5</td>
+			</tr>
+			
+		</table>
+		
+		
+		<script type="text/javascript">
+			// 层级选择器
+			// 获取子元素，不管儿子/孙子都能获取到
+			//alert($("ul li").length)
+			// 获取直接子元素
+			//alert($("ul>li").length)
+			
+		</script>
+		
+		<script type="text/javascript">
+			// 增强的基本选择器
+			// 获取第一个元素，css() 设置样式
+			$("li:first").css("background-color", "red");
+			
+			// 最后一个
+			$("li:last").css("color", "blue").css("background-color", "yellow");
+			
+			// 指定索引的元素 eq == equal，类似的还有lt/gt
+			$("li:eq(1)").css("color", "green");
+			
+			// odd 奇数
+			$("tr:odd").css("background-color", "antiquewhite");
+			// even 偶数
+			$("tr:even").css("background-color", "aqua");
+			
+			
+		</script>
+		
+		
+		<input type="text" name="name"  value="zhangsan" />
+		<input type="text" name="ame"  value="lisi" />
+		<input type="text" name="sname"  value="wangwu" />
+		<input type="text" name="age" value="20" />
+		
+		<select>
+			<option>郑州</option>
+			<option>开封</option>
+			
+		</select>
+		<br  />
+		<input type="checkbox" checked="checked" />抽烟
+		<input type="checkbox"  />喝酒
+		<input type="checkbox"  />烫头
+		
+		
+		<script type="text/javascript">
+			// 属性选择器  [属性名=值],    val() == value
+			//alert($("input[name='name']").val())
+			
+			// ^ 表示以指定内容开头
+			//alert($("input[name^='a']").length)
+			
+			// $ 以指定内容结尾
+			//alert($("input[name$='me']").length);
+			
+			// * 包含指定内容
+			//alert($("input[name*='n']").length);
+			
+			
+			
+		</script>
+		
+		<script type="text/javascript">
+			// 表单选择器  , select/textarea 都属于输入控件
+			//alert($(":input").length);
+			//alert($("input").length);
+			
+			// type="text" 的输入控件
+			//alert($(":text").length)
+			
+			//alert($(":checkbox").length)
+			
+			// 表单属性选择器
+			//alert($(":checkbox:checked").length)
+			alert($(":checkbox:not(:checked)").length)
+			
+		</script>
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+

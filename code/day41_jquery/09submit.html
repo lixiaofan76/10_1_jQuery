@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<!-- onsubmit 提交事件
+			如果return false，阻止默认的提交操作
+			
+		-->
+		<form action="index.html" onsubmit="return formVerify()">
+			name<input id="name" type="text" name="name" /><br />
+			age<input id="age" type="text" name="age" /><br />
+			<input type="submit" value="submit"/>
+		</form>
+		
+		<script type="text/javascript">
+			
+			function formVerify(){
+				var nameEle = document.getElementById("name");
+				var name = nameEle.value;
+				if(name == null || name.length == 0){
+					return false;
+				}
+				
+				var ageEle = document.getElementById("age");
+				var age = ageEle.value;
+				var regx = /^[1-9]\d{0,2}$/;
+				// test() 验证
+				if(!regx.test(age)){
+					return false;
+				}
+				
+			}
+			
+		</script>
+		
+		
+	</body>
+</html>

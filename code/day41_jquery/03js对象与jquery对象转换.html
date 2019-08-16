@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript" src="js/jquery-1.12.2.min.js" ></script>
+		
+	</head>
+	<body>
+		
+		<p id="p1">栈</p>
+		<div>本地方法栈</div>
+		<div>虚拟机栈</div>
+		
+		<script type="text/javascript">
+			var ele = document.getElementById("p1");
+			// js对象不能调用jquery对象的方法
+			//ele.html();
+			// js对象-》jquery对象，重点掌握
+			//alert($(ele).html());
+			
+			alert($("div").innerHTML);//undefined
+			// 本质上，使用jquery选择器，得到的都是属于数组结构
+			// jquery对象-》js对象，通过下标
+			alert($("div")[0].innerHTML)
+			
+			
+		</script>
+		
+		
+	</body>
+</html>
